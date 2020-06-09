@@ -240,7 +240,7 @@ extension FlutterArkitView {
             logPluginError("deserialization failed", toChannel: channel)
             return
         }
-        let relativeTransform = deserizlieVector4(params)
+        let relativeTransform = simd_float4x4.init()
 
         sceneView.session.setWorldOrigin(relativeTransform: relativeTransform)
         //sceneView.scene. .rootNode.removeAnimation(forKey: key)
