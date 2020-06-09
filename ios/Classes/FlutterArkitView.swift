@@ -102,6 +102,10 @@ class FlutterArkitView: NSObject, FlutterPlatformView {
             onDispose(result)
             result(nil)
             break
+        case "setWorldOrigin":
+            onSetWorldOrigin(arguments!)
+            result(nil)
+            break    
         default:
             result(FlutterMethodNotImplemented)
             break

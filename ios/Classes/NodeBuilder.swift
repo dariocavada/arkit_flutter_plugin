@@ -34,6 +34,7 @@ func createNode(_ geometry: SCNGeometry?, fromDict dict: Dictionary<String, Any>
     if let renderingOrder = dict["renderingOrder"] as? Int {
         node.renderingOrder = renderingOrder
     }
+
     
     return node
 }

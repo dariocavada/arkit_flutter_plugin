@@ -234,6 +234,19 @@ extension FlutterArkitView {
         }
         sceneView.scene.rootNode.removeAnimation(forKey: key)
     }
+
+    func onSetWorldOrigin(_ arguments: Dictionary<String, Any>) {
+        guard let params = arguments["relativeTransform"] as? Array<Double> else {
+            logPluginError("deserialization failed", toChannel: channel)
+            return
+        }
+        let relativeTransform = deserizlieVector4(params)
+
+        sceneView.session.setWorldOrigin(relativeTransform: relativeTransform)
+        //sceneView.scene. .rootNode.removeAnimation(forKey: key)
+    }
+
+   
     
     
     

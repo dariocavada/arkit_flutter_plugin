@@ -305,6 +305,14 @@ class ARKitController {
         'removeARKitAnchor', {'anchorIdentifier': anchorIdentifier});
   }
 
+  /* MODI START: Dario Cavada */
+  Future<void> setWorldOrigin(Matrix4 relativeTransform) {
+    assert(relativeTransform != null);
+    return _channel.invokeMethod(
+        'setWorldOrigin', {'relativeTransform': relativeTransform});
+  }
+  /* MODI END: Dario Cavada */
+
   /// Perform Hit Test
   /// defaults to center of the screen.
   /// x and y values are between 0 and 1
